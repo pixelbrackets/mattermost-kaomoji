@@ -17,14 +17,20 @@ $root->get('/', function (Request $req, Response $res) {
     $template = new Html5MiniTemplate();
     $template->setStylesheet('skeleton');
     $template->setStylesheetMode(Html5MiniTemplate::STYLE_INLINE);
-    $template->setContent('<h1>\(^_^)/ Mattermost Kaomoji Integration</h1>
+    $content = '<h1>\(^_^)/ Mattermost Kaomoji Integration</h1>
       <p>
           1. Create a »Slash Command« in your Mattermost instance<br>
-          2. Set »https://mattermost-kaomoji.herokuapp.com/hook/«
+          2. Set »###BASEURL###hook/«
              as »Request URL«<br>
           3. Select a command trigger word, for example »kaomoji«<br>
           4. Type <code>/kaomoji</code> to trigger the command<br>
-      </p>');
+      </p>';
+    $content = str_replace(
+        '###BASEURL###',
+        empty(getenv('BASEURL'))? 'https://example.com/' : getenv('BASEURL'),
+        $content
+    );
+    $template->setContent($content);
     $res->sendHtml($template->getMarkup());
 });
 
