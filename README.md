@@ -8,23 +8,25 @@
 
 This integration responds Kaomoji to a Mattermost Slash Command.
 
-    \(^_^)/
+![Screenshot](./docs/screenshot.png)
  
-🚀 A build of the integration is available as [Webapp](https://mattermost-kaomoji.herokuapp.com/)
-
-This repository contains the sourcecode to build the integration.
-
 ## Requirements
 
 - PHP
 
 ## Installation
 
-`composer install`
+Packagist Entry https://packagist.org/packages/pixelbrackets/mattermost-kaomoji
 
 ## Source
 
 https://gitlab.com/pixelbrackets/mattermost-kaomoji
+
+Mirror https://github.com/pixelbrackets/mattermost-kaomoji
+
+## Demo
+
+🚀 https://mattermost-kaomoji.app.pixelbrackets.de/
 
 ## License
 
